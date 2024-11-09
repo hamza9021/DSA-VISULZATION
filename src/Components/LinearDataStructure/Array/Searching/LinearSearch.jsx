@@ -6,7 +6,7 @@ const LinearSearch = () => {
   const [value, setValue] = useState(0);
   const [index, setIndex] = useState(0);
   const [targetValue, setTargetValue] = useState(0);
-  const [searchingIndex, setSearchingIndex] = useState(null);
+  const [searchingIndex, setSearchingIndex] = useState(-1);
   const [found, setFound] = useState(false);
 
   const handleSize = (e) => {
@@ -58,6 +58,7 @@ const LinearSearch = () => {
         setSearchingIndex(i);
         if (array[i] === targetValue) {
           setFound(true);
+          setSearchingIndex(i);
           resolve(true);
         } else {
           setTimeout(() => resolve(searching(i + 1)), 2000);
