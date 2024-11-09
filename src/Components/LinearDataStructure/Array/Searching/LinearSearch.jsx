@@ -148,6 +148,16 @@ const LinearSearch = () => {
             </div>
           </div>
         )}
+        <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
+          <p className="font-semibold">Best Time Complexity: O(1)</p>
+          <p className="font-semibold">
+            Average Time Complexity: O(n)
+          </p>
+          <p className="font-semibold">
+            Worst Time Complexity: O(n)
+          </p>
+          <p className="font-semibold">Space Complexity: O(1)</p>
+        </div>
       </div>
     </>
   );
