@@ -39,25 +39,31 @@ const LinearSearch = () => {
     setTargetValue(parseInt(e.target.value, 10));
   };
 
-  const handleSearch = () => {
+  const handleSearch = async () => {
     setFound(false);
     setSearchingIndex(0);
-    searching(0);
+    const result = await searching(0);
+    if (result) {
+      alert(`Value found at index ${searchingIndex}`);
+    } else {
+      alert("Value not found");
+    }
   };
 
   const searching = (i) => {
-    if (i === size) {
-      return;
-    }
-    setSearchingIndex(i);
-
-    if (array[i] === targetValue) {
-      alert(`Value found at index ${i}`);
-      setFound(true);
-      return;
-    }
-
-    setTimeout(() => searching(i + 1), 2000);
+    return new Promise((resolve) => {
+      if (i === size) {
+        resolve(false);
+      } else {
+        setSearchingIndex(i);
+        if (array[i] === targetValue) {
+          setFound(true);
+          resolve(true);
+        } else {
+          setTimeout(() => resolve(searching(i + 1)), 2000);
+        }
+      }
+    });
   };
 
   return (
@@ -79,7 +85,10 @@ const LinearSearch = () => {
             />
           </div>
           <div className="flex items-center justify-between w-full">
-            <label htmlFor="value" className="text-gray-700 font-semibold w-1/3">
+            <label
+              htmlFor="value"
+              className="text-gray-700 font-semibold w-1/3"
+            >
               Insert Value:
             </label>
             <input
@@ -119,7 +128,9 @@ const LinearSearch = () => {
 
         {array.length > 0 && (
           <div className="mt-6 bg-white p-4 rounded-lg shadow-md w-full">
-            <h2 className="text-xl font-bold text-gray-700 mb-4">Array Values</h2>
+            <h2 className="text-xl font-bold text-gray-700 mb-4">
+              Array Values
+            </h2>
             <div className="grid grid-cols-10 gap-3">
               {array.map((value, idx) => (
                 <div
