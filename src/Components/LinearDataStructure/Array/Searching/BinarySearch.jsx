@@ -99,6 +99,16 @@ const BinarySearch = () => {
       <div className="text-center mt-4">
         {found !== -1 ? <p className="text-lg">Target value found at index {found}</p> : <p className="text-lg">Target value not found</p>}
       </div>
+      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
+          <p className="font-semibold">Best Time Complexity: O(1)</p>
+          <p className="font-semibold">
+            Average Time Complexity: O(log n)
+          </p>
+          <p className="font-semibold">
+            Worst Time Complexity: O(log n)
+          </p>
+          <p className="font-semibold">Space Complexity: O(1)</p>
+        </div>
     </>
   );
 };
