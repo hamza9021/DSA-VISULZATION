@@ -48,7 +48,7 @@ const Home = function BubbleSort() {
 
       <div className="max-w-3xl mx-auto my-12 px-6 py-8 bg-white shadow-xl rounded-xl">
         <h2 className="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-gray-200 pb-2">
-          About Me And Project
+          About Me and the Project
         </h2>
         <p className="text-lg text-gray-700 mb-6">
           Hello! I'm Hamza Riaz, a passionate Full-Stack Developer based in
@@ -61,6 +61,12 @@ const Home = function BubbleSort() {
           students who find data structures and algorithms difficult to
           understand. My goal is to make these concepts more accessible and
           easier to grasp through visualization and interaction.
+        </p>
+        <p className="text-lg text-gray-700 mb-6">
+          This is just the beginning! I plan to add many more features and
+          improvements over time. If you have any ideas or suggestions, I’d love
+          to hear from you. You can also contribute directly through my GitHub
+          profile.
         </p>
         <p className="text-lg text-gray-700">
           I built this project entirely using React, and the source code is
