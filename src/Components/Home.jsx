@@ -76,7 +76,7 @@ const Home = function BubbleSort() {
           I built this project entirely using React, and the source code is
           available on GitHub. You can check it out here:{" "}
           <a
-            href="https://github.com/hamza9021/your-repo-link"
+            href="https://github.com/hamza9021/DSA-VISULZATION"
             className="text-blue-500 hover:underline"
           >
             GitHub Repository
