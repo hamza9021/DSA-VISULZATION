@@ -19,12 +19,16 @@ const Home = function BubbleSort() {
               Array
             </li>
           </Link>
-          <li className="text-lg text-gray-600 bg-gray-100 px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition">
-            Linked List
-          </li>
-          <li className="text-lg text-gray-600 bg-gray-100 px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition">
-            Stack
-          </li>
+          <Link to={"/linkedlist"}>
+            <li className="text-lg text-gray-600 bg-gray-100 px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition">
+              Linked List
+            </li>
+          </Link>
+          <Link to={"/stack"}>
+            <li className="text-lg text-gray-600 bg-gray-100 px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition">
+              Stack
+            </li>
+          </Link>
           <li className="text-lg text-gray-600 bg-gray-100 px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition">
             Queue
           </li>

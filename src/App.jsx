@@ -1,6 +1,6 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, Array, BubbleSort, LinearSearch, BinarySearch } from "./Components";
+import { Home, Array, BubbleSort, LinearSearch, BinarySearch, LinkedList, Stack } from "./Components";
 
 const appRouter = createBrowserRouter([
   {
@@ -22,6 +22,14 @@ const appRouter = createBrowserRouter([
   {
     path: "/array/search/binary",
     element: <BinarySearch />,
+  },
+  {
+    path: "/linkedlist",
+    element: <LinkedList />,
+  },
+  {
+    path: "/stack",
+    element: <Stack />,
   }
 ]);
 
