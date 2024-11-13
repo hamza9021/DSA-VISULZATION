@@ -41,9 +41,11 @@ const Home = function BubbleSort() {
           Non-Linear Data Structure
         </h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-          <li className="text-lg text-gray-600 bg-gray-100 px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition">
-            Tree
-          </li>
+          <Link to={"/tree"}>
+            <li className="text-lg text-gray-600 bg-gray-100 px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition">
+              Tree
+            </li>
+          </Link>
           <li className="text-lg text-gray-600 bg-gray-100 px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition">
             Graph
           </li>

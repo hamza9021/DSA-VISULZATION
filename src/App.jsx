@@ -10,6 +10,7 @@ import {
   BinarySearch,
   LinkedList,
   Stack,
+  Tree,
 } from "./Components";
 
 const appRouter = createBrowserRouter([
@@ -49,6 +50,10 @@ const appRouter = createBrowserRouter([
     path: "/stack",
     element: <Stack />,
   },
+  {
+    path: "/tree",
+    element: <Tree />,
+  }
 ]);
 
 function App() {
