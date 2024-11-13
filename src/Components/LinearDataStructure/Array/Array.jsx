@@ -120,7 +120,7 @@ const Array = () => {
               </Link>
             </li>
             <li>
-              <Link to="/array/sort/insert">
+              <Link to="/array/sort/insertion">
                 <button className="w-full py-3 px-6 text-lg text-white bg-gray-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition duration-300">
                   Insertion Sort
                 </button>

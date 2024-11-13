@@ -1,46 +1,57 @@
 import React, { useState } from "react";
 
-const BubbleSort = () => {
+const SelectionSort = () => {
   const size = 10;
   const [array, setArray] = useState([90, 80, 70, 60, 50, 40, 30, 20, 10, 0]);
   const [isSorting, setIsSorting] = useState(false);
-  const [swappedIndexes, setSwappedIndexes] = useState([-1, -1]);
-  const [sortedIndex, setSortedIndex] = useState(size);
+  const [currentIndexes, setCurrentIndexes] = useState([-1, -1]);
+  const [minIndex, setMinIndex] = useState(-1);
 
   const handleRandomArray = () => {
     const updatedArray = Array.from({ length: size }, () =>
-      Math.floor(Math.random() * 100)
+      Math.floor(Math.random() * 1000)
     );
     setArray(updatedArray);
-    setSortedIndex(size);
+    setCurrentIndexes([-1, -1]);
+    setMinIndex(-1);
   };
 
   const handleSorting = () => {
     let newArray = [...array];
     let i = 0;
-    let j = 0;
     const delay = 2000;
 
     setIsSorting(true);
 
     const iterateSorting = () => {
       if (i < size - 1) {
-        if (j < size - i - 1) {
-          if (newArray[j] > newArray[j + 1]) {
-            [newArray[j], newArray[j + 1]] = [newArray[j + 1], newArray[j]];
-            setSwappedIndexes([j, j + 1]);
-            setArray([...newArray]);
+        let minIdx = i;
+
+        const findMinimum = (j) => {
+          if (j < size) {
+            setCurrentIndexes([i, j]);
+            if (newArray[j] < newArray[minIdx]) {
+              minIdx = j;
+              setMinIndex(minIdx);
+            }
+            setTimeout(() => findMinimum(j + 1), delay);
+          } else {
+            if (minIdx !== i) {
+              [newArray[i], newArray[minIdx]] = [newArray[minIdx], newArray[i]];
+              setArray([...newArray]);
+              setCurrentIndexes([i, minIdx]);
+            }
+            i++;
+            setTimeout(iterateSorting, delay);
           }
-          j++;
-        } else {
-          setSortedIndex(size - i - 1);
-          i++;
-          j = 0;
-        }
+        };
+
+        findMinimum(i + 1);
       } else {
         setIsSorting(false);
+        setCurrentIndexes([-1, -1]);
+        setMinIndex(-1);
       }
-      setTimeout(iterateSorting, delay);
     };
 
     iterateSorting();
@@ -49,7 +60,7 @@ const BubbleSort = () => {
   return (
     <>
       <h1 className="text-3xl font-bold text-center text-gray-800 my-6">
-        Bubble Sort Algorithm
+        Visualized Selection Sort Algorithm
       </h1>
 
       <div className="flex flex-wrap justify-center mb-6">
@@ -57,12 +68,15 @@ const BubbleSort = () => {
           <div
             key={index}
             className={`text-white font-bold py-2 px-4 rounded m-2 transition-transform duration-500 ${
-              swappedIndexes.includes(index)
-                ? "bg-yellow-500 scale-110"
-                : index >= sortedIndex
-                ? "bg-blue-500"
+              index === minIndex
+                ? "bg-blue-500 scale-110"
+                : currentIndexes.includes(index)
+                ? "bg-yellow-500 scale-105"
                 : "bg-red-500"
             }`}
+            style={{
+              transform: `translateY(${index === minIndex ? "-10px" : "0px"})`,
+            }}
           >
             {value}
           </div>
@@ -85,9 +99,10 @@ const BubbleSort = () => {
           {isSorting ? "Sorting..." : "Start Sorting"}
         </button>
       </div>
-
       <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
-        <p className="font-semibold">Best Time Complexity: O(n)</p>
+        <p className="font-semibold">
+          Best Time Complexity: O(n<sup>2</sup>)
+        </p>
         <p className="font-semibold">
           Average Time Complexity: O(n<sup>2</sup>)
         </p>
@@ -100,4 +115,4 @@ const BubbleSort = () => {
   );
 };
 
-export default BubbleSort;
+export default SelectionSort;

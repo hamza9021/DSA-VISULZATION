@@ -1,6 +1,16 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, Array, BubbleSort, LinearSearch, BinarySearch, LinkedList, Stack } from "./Components";
+import {
+  Home,
+  Array,
+  BubbleSort,
+  SelectionSort,
+  InsertionSort,
+  LinearSearch,
+  BinarySearch,
+  LinkedList,
+  Stack,
+} from "./Components";
 
 const appRouter = createBrowserRouter([
   {
@@ -16,8 +26,16 @@ const appRouter = createBrowserRouter([
     element: <BubbleSort />,
   },
   {
+    path: "/array/sort/selection",
+    element: <SelectionSort />,
+  },
+  {
     path: "/array/search/linear",
     element: <LinearSearch />,
+  },
+  {
+    path: "/array/sort/insertion",
+    element: <InsertionSort />,
   },
   {
     path: "/array/search/binary",
@@ -30,7 +48,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/stack",
     element: <Stack />,
-  }
+  },
 ]);
 
 function App() {

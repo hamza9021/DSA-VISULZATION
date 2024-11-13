@@ -1,46 +1,55 @@
 import React, { useState } from "react";
 
-const BubbleSort = () => {
+const InsertionSort = () => {
   const size = 10;
   const [array, setArray] = useState([90, 80, 70, 60, 50, 40, 30, 20, 10, 0]);
   const [isSorting, setIsSorting] = useState(false);
-  const [swappedIndexes, setSwappedIndexes] = useState([-1, -1]);
-  const [sortedIndex, setSortedIndex] = useState(size);
+  const [highlightedIndex, setHighlightedIndex] = useState(-1);
+  const [sortedIndex, setSortedIndex] = useState(-1);
 
   const handleRandomArray = () => {
     const updatedArray = Array.from({ length: size }, () =>
       Math.floor(Math.random() * 100)
     );
     setArray(updatedArray);
-    setSortedIndex(size);
+    setSortedIndex(-1);
   };
 
   const handleSorting = () => {
-    let newArray = [...array];
-    let i = 0;
-    let j = 0;
-    const delay = 2000;
+    const newArray = [...array];
+    let i = 1;
+    let delay = 2000;
 
     setIsSorting(true);
 
     const iterateSorting = () => {
-      if (i < size - 1) {
-        if (j < size - i - 1) {
-          if (newArray[j] > newArray[j + 1]) {
-            [newArray[j], newArray[j + 1]] = [newArray[j + 1], newArray[j]];
-            setSwappedIndexes([j, j + 1]);
+      if (i < size) {
+        let j = i;
+        let current = newArray[i];
+        setHighlightedIndex(i);
+
+        const innerLoop = () => {
+          if (j > 0 && newArray[j - 1] > current) {
+            newArray[j] = newArray[j - 1];
             setArray([...newArray]);
+            setHighlightedIndex(j - 1);
+            j--;
+
+            setTimeout(innerLoop, delay);
+          } else {
+            newArray[j] = current;
+            setArray([...newArray]);
+            setSortedIndex(i);
+            i++;
+            setTimeout(iterateSorting, delay);
           }
-          j++;
-        } else {
-          setSortedIndex(size - i - 1);
-          i++;
-          j = 0;
-        }
+        };
+
+        innerLoop();
       } else {
         setIsSorting(false);
+        setHighlightedIndex(-1);
       }
-      setTimeout(iterateSorting, delay);
     };
 
     iterateSorting();
@@ -49,7 +58,7 @@ const BubbleSort = () => {
   return (
     <>
       <h1 className="text-3xl font-bold text-center text-gray-800 my-6">
-        Bubble Sort Algorithm
+        Insertion Sort Algorithm
       </h1>
 
       <div className="flex flex-wrap justify-center mb-6">
@@ -57,9 +66,9 @@ const BubbleSort = () => {
           <div
             key={index}
             className={`text-white font-bold py-2 px-4 rounded m-2 transition-transform duration-500 ${
-              swappedIndexes.includes(index)
+              index === highlightedIndex
                 ? "bg-yellow-500 scale-110"
-                : index >= sortedIndex
+                : index <= sortedIndex
                 ? "bg-blue-500"
                 : "bg-red-500"
             }`}
@@ -100,4 +109,4 @@ const BubbleSort = () => {
   );
 };
 
-export default BubbleSort;
+export default InsertionSort;
