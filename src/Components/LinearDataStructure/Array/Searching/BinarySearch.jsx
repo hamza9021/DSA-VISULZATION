@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import _2dBinarySearch from "./2DBinarySearch";
 
 const BinarySearch = () => {
   const [array, setArray] = useState([]);
@@ -28,7 +29,7 @@ const BinarySearch = () => {
       return;
     }
 
-    const midIndex = Math.floor((start + end) / 2); 
+    const midIndex = Math.floor((start + end) / 2);
     setMid(midIndex);
     setLeft(start);
     setRight(end);
@@ -39,27 +40,38 @@ const BinarySearch = () => {
     }
 
     if (array[midIndex] < targetValue) {
-      setTimeout(() => binarySearch(array, targetValue, midIndex + 1, end), 4000);
+      setTimeout(
+        () => binarySearch(array, targetValue, midIndex + 1, end),
+        4000
+      );
     } else {
-      setTimeout(() => binarySearch(array, targetValue, start, midIndex - 1), 4000);
+      setTimeout(
+        () => binarySearch(array, targetValue, start, midIndex - 1),
+        4000
+      );
     }
   };
 
   return (
     <>
       <div className="text-center my-6">
-        <h1 className="text-3xl font-bold text-gray-800">Binary Search</h1>
+        <h1 className="text-3xl font-bold text-gray-800">
+          1D Array Binary Search
+        </h1>
       </div>
       <div className="flex flex-col items-center gap-4 mb-8">
-        <label htmlFor="array" className="text-lg">Array</label>
-        <input
-          type="text"
+        <label htmlFor="array" className="text-lg">
+          Array
+        </label>
+        <textarea
           id="array"
-          placeholder="Enter array"
+          placeholder="Enter Array values (comma-separated)"
           onChange={handleArray}
-          className="px-4 py-2 border rounded-md w-64"
-        />
-        <label htmlFor="targetValue" className="text-lg">Target Value</label>
+          className="px-4 py-2 border rounded-md w-64 h-40"
+        ></textarea>
+        <label htmlFor="targetValue" className="text-lg">
+          Target Value
+        </label>
         <input
           type="number"
           id="targetValue"
@@ -81,7 +93,7 @@ const BinarySearch = () => {
             <div
               key={index}
               className={`w-16 h-16 flex flex-col items-center justify-center text-lg text-gray-700 rounded-lg shadow-md transition-all ${
-                mid === index ? "bg-red-500" : "" 
+                mid === index ? "bg-red-500" : ""
               } ${left <= index && index <= right ? "bg-blue-300" : ""}  ${
                 found === index ? "bg-green-500" : ""
               }`}
@@ -97,18 +109,19 @@ const BinarySearch = () => {
         <p className="text-lg font-semibold text-green-500">Right: {right}</p>
       </div>
       <div className="text-center mt-4">
-        {found !== -1 ? <p className="text-lg">Target value found at index {found}</p> : <p className="text-lg">Target value not found</p>}
+        {found !== -1 ? (
+          <p className="text-lg">Target value found at index {found}</p>
+        ) : (
+          <p className="text-lg">Target value not found</p>
+        )}
       </div>
       <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
-          <p className="font-semibold">Best Time Complexity: O(1)</p>
-          <p className="font-semibold">
-            Average Time Complexity: O(log n)
-          </p>
-          <p className="font-semibold">
-            Worst Time Complexity: O(log n)
-          </p>
-          <p className="font-semibold">Space Complexity: O(1)</p>
-        </div>
+        <p className="font-semibold">Best Time Complexity: O(1)</p>
+        <p className="font-semibold">Average Time Complexity: O(log n)</p>
+        <p className="font-semibold">Worst Time Complexity: O(log n)</p>
+        <p className="font-semibold">Space Complexity: O(1)</p>
+      </div>
+      <_2dBinarySearch />
     </>
   );
 };
