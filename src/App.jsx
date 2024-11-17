@@ -9,6 +9,7 @@ import {
   LinearSearch,
   BinarySearch,
   LinkedList,
+  Queue,
   Stack,
   Tree,
 } from "./Components";
@@ -47,13 +48,17 @@ const appRouter = createBrowserRouter([
     element: <LinkedList />,
   },
   {
+    path: "/queue",
+    element: <Queue />,
+  },
+  {
     path: "/stack",
     element: <Stack />,
   },
   {
     path: "/tree",
     element: <Tree />,
-  }
+  },
 ]);
 
 function App() {
