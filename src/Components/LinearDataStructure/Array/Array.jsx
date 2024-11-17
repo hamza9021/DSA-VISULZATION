@@ -107,21 +107,21 @@ const Array = () => {
           <ul className="space-y-4">
             <li>
               <Link to="/array/sort/bubble">
-                <button className="w-full py-3 px-6 text-lg text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300">
+                <button className="w-full py-3 px-6 text-lg text-gray-700 border border-gray-400 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300">
                   Bubble Sort
                 </button>
               </Link>
             </li>
             <li>
               <Link to="/array/sort/selection">
-                <button className="w-full py-3 px-6 text-lg text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition duration-300">
+                <button className="w-full py-3 px-6 text-lg text-gray-700 border border-gray-400 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300">
                   Selection Sort
                 </button>
               </Link>
             </li>
             <li>
               <Link to="/array/sort/insertion">
-                <button className="w-full py-3 px-6 text-lg text-white bg-gray-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition duration-300">
+                <button className="w-full py-3 px-6 text-lg text-gray-700 border border-gray-400 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300">
                   Insertion Sort
                 </button>
               </Link>
@@ -136,14 +136,14 @@ const Array = () => {
           <ul className="space-y-4">
             <li>
               <Link to="/array/search/linear">
-                <button className="w-full py-3 px-6 text-lg text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition duration-300">
+                <button className="w-full py-3 px-6 text-lg text-gray-700 border border-gray-400 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300">
                   Linear Search
                 </button>
               </Link>
             </li>
             <li>
               <Link to="/array/search/binary">
-                <button className="w-full py-3 px-6 text-lg text-white bg-teal-600 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50 transition duration-300">
+                <button className="w-full py-3 px-6 text-lg text-gray-700 border border-gray-400 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300">
                   Binary Search
                 </button>
               </Link>
