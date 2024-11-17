@@ -29,6 +29,7 @@ function Queue() {
       updatedArray.shift();
       setArray(updatedArray);
       setIndex(index - 1);
+      setSize(size - 1);
     } else {
       alert("Queue is empty");
     }
