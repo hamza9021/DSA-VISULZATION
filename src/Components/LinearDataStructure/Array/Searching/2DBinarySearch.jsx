@@ -62,7 +62,7 @@ const MatrixBinarySearchVisualizer = () => {
       } else {
         start = midRow + 1;
       }
-      await delay(1000);
+      await delay(2000);
     }
     setFound(false);
   };
@@ -86,7 +86,7 @@ const MatrixBinarySearchVisualizer = () => {
       } else {
         end = midCol - 1;
       }
-      await delay(1000);
+      await delay(2000);
     }
     return false;
   };
@@ -98,7 +98,8 @@ const MatrixBinarySearchVisualizer = () => {
       <div className="flex flex-col items-center gap-6 p-6 mt-28">
         <h1 className="text-3xl font-bold">Matrix Binary Search</h1>
         <textarea
-          placeholder="Enter matrix (rows separated by newline, values by commas)"
+          placeholder="Enter matrix (rows separated by newline, values by commas) 
+          NOTE: Each Row Is Sorted And Next Row 1st Element Is Greater Than Previous Row Last Element"
           onChange={handleMatrixInput}
           className="p-2 border rounded-md w-96 h-32"
         />
@@ -111,7 +112,7 @@ const MatrixBinarySearchVisualizer = () => {
         />
         <button
           onClick={startBinarySearch}
-          className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          className="px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 "
         >
           Start Search
         </button>
@@ -151,7 +152,7 @@ const MatrixBinarySearchVisualizer = () => {
 
         <div className="text-center mt-4">
           {found ? (
-            <p className="text-xl text-green-600">
+            <p className="text-xl font-bold text-green-600">
               Target value found at index: [{foundIndex[0]}, {foundIndex[1]}]
             </p>
           ) : (
@@ -161,7 +162,9 @@ const MatrixBinarySearchVisualizer = () => {
       </div>
       <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
         <p className="font-semibold">Best Time Complexity: O(1)</p>
-        <p className="font-semibold">Average Time Complexity: O(log n * log m)</p>
+        <p className="font-semibold">
+          Average Time Complexity: O(log n * log m)
+        </p>
         <p className="font-semibold">Worst Time Complexity: O(log n * log m)</p>
         <p className="font-semibold">Space Complexity: O(1)</p>
       </div>

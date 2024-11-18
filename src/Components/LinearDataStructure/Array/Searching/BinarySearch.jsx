@@ -65,9 +65,9 @@ const BinarySearch = () => {
         </label>
         <textarea
           id="array"
-          placeholder="Enter Array values (comma-separated)"
+          placeholder="Enter Array values (comma-separated)  e.g. 1,2,3,4,5,6,7,8,9,10"
           onChange={handleArray}
-          className="px-4 py-2 border rounded-md w-64 h-40"
+          className="px-4 py-2 border rounded-md w-80 h-36"
         ></textarea>
         <label htmlFor="targetValue" className="text-lg">
           Target Value
@@ -110,7 +110,7 @@ const BinarySearch = () => {
       </div>
       <div className="text-center mt-4">
         {found !== -1 ? (
-          <p className="text-lg">Target value found at index {found}</p>
+          <p className="text-lg font-bold text-green-600">Target value found at index {found}</p>
         ) : (
           <p className="text-lg">Target value not found</p>
         )}
