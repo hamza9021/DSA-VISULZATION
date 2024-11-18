@@ -107,22 +107,29 @@ const Array = () => {
           <ul className="space-y-4">
             <li>
               <Link to="/array/sort/bubble">
-                <button className="w-full py-3 px-6 text-lg text-gray-700 border border-gray-400 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300">
+                <button className="w-full py-3 px-6 text-lg text-gray-800 border border-gray-300 rounded-lg bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-50 transition duration-200 shadow-sm">
                   Bubble Sort
                 </button>
               </Link>
             </li>
             <li>
               <Link to="/array/sort/selection">
-                <button className="w-full py-3 px-6 text-lg text-gray-700 border border-gray-400 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300">
+                <button className="w-full py-3 px-6 text-lg text-gray-800 border border-gray-300 rounded-lg bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-50 transition duration-200 shadow-sm">
                   Selection Sort
                 </button>
               </Link>
             </li>
             <li>
               <Link to="/array/sort/insertion">
-                <button className="w-full py-3 px-6 text-lg text-gray-700 border border-gray-400 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300">
+                <button className="w-full py-3 px-6 text-lg text-gray-800 border border-gray-300 rounded-lg bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-50 transition duration-200 shadow-sm">
                   Insertion Sort
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/array/sort/quick">
+                <button className="w-full py-3 px-6 text-lg text-gray-800 border border-gray-300 rounded-lg bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-50 transition duration-200 shadow-sm">
+                  Quick Sort
                 </button>
               </Link>
             </li>

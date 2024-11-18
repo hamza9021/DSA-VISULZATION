@@ -6,6 +6,7 @@ import {
   BubbleSort,
   SelectionSort,
   InsertionSort,
+  QuickSort,
   LinearSearch,
   BinarySearch,
   LinkedList,
@@ -38,6 +39,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/array/sort/insertion",
     element: <InsertionSort />,
+  },
+  {
+    path: "/array/sort/quick",
+    element: <QuickSort />,
   },
   {
     path: "/array/search/binary",
