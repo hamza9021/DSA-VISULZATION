@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MatrixLinearSearchVisualizer from "./2DLinearSearch";
 
 const LinearSearch = () => {
   const [size, setSize] = useState(0);
@@ -69,7 +70,7 @@ const LinearSearch = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center p-6 bg-gray-50 min-h-screen">
+      <div className="flex flex-col items-center p-6">
         <h1 className="text-3xl font-bold text-center text-gray-800 my-6">
           Linear Search Visualization
         </h1>
@@ -151,15 +152,12 @@ const LinearSearch = () => {
         )}
         <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
           <p className="font-semibold">Best Time Complexity: O(1)</p>
-          <p className="font-semibold">
-            Average Time Complexity: O(n)
-          </p>
-          <p className="font-semibold">
-            Worst Time Complexity: O(n)
-          </p>
+          <p className="font-semibold">Average Time Complexity: O(n)</p>
+          <p className="font-semibold">Worst Time Complexity: O(n)</p>
           <p className="font-semibold">Space Complexity: O(1)</p>
         </div>
       </div>
+      <MatrixLinearSearchVisualizer />
     </>
   );
 };
