@@ -8,7 +8,7 @@ const Home = function BubbleSort() {
       {/* Header */}
       <header className="max-w-5xl mx-auto text-center mb-12">
         <h1 className="text-4xl font-extrabold text-[#e5e5e7] tracking-wide leading-tight">
-          Data Structures and Algorithm Visualization
+          Data Structures & Algorithm Visualization
         </h1>
         <p className="text-lg text-[#e5e5e7] mt-4">
           Simplifying complex concepts through interactive learning.
@@ -20,6 +20,14 @@ const Home = function BubbleSort() {
         <h2 className="text-3xl font-bold text-[#e5e5e7] mb-6 text-center">
           Linear Data Structures
         </h2>
+        <p className="text-lg text-[#e5e5e7] mb-6 text-center">
+          Linear data structures are a type of data structure in which elements
+          are stored sequentially. Each element in the structure is connected to
+          its previous and next elements, making it easier to traverse through
+          the collection. Common examples of linear data structures include
+          Arrays, Linked Lists, Stacks, and Queues. These structures allow for
+          efficient access and manipulation of elements.
+        </p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           <Link
             to="/array"
@@ -75,6 +83,15 @@ const Home = function BubbleSort() {
         <h2 className="text-3xl font-bold text-[#e5e5e7] mb-6 text-center">
           Non-Linear Data Structures
         </h2>
+        <p className="text-lg text-[#e5e5e7] mb-6 text-center">
+          Non-linear data structures, on the other hand, do not store elements
+          in a sequential manner. Instead, elements are connected in a
+          hierarchical or network-like structure, where each element can have
+          multiple relationships with other elements. Examples of non-linear
+          data structures include Trees and Graphs. These structures are useful
+          for representing more complex relationships and are widely used in
+          algorithms for tasks like searching, sorting, and traversal.
+        </p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <Link
             to="/tree"
@@ -102,7 +119,7 @@ const Home = function BubbleSort() {
       </section>
 
       {/* About Section */}
-      <section className="max-w-5xl mx-auto bg-[#00224D] shadow-lg rounded-lg p-8 mb-12">
+      <section className="max-w-5xl mx-auto bg-[#00224D] shadow-lg rounded-lg p-8 mb-12 text-center">
         <h2 className="text-3xl font-bold text-[#e5e5e7] mb-6">About Me</h2>
         <p className="text-lg text-[#e5e5e7] mb-4">
           Hello! I'm <span className="font-semibold">Hamza Riaz</span>, a
