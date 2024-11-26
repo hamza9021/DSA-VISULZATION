@@ -53,14 +53,14 @@ const BinarySearch = () => {
   };
 
   return (
-    <>
+    <div className="bg-gradient-to-b from-[#00224D] to-[#432E54] min-h-screen py-8 px-4">
       <div className="text-center my-6">
-        <h1 className="text-3xl font-bold text-gray-800">
+        <h1 className="text-3xl font-bold text-white">
           1D Array Binary Search
         </h1>
       </div>
       <div className="flex flex-col items-center gap-4 mb-8">
-        <label htmlFor="array" className="text-lg">
+        <label htmlFor="array" className="text-lg text-white">
           Array
         </label>
         <textarea
@@ -69,7 +69,7 @@ const BinarySearch = () => {
           onChange={handleArray}
           className="px-4 py-2 border rounded-md w-80 h-36"
         ></textarea>
-        <label htmlFor="targetValue" className="text-lg">
+        <label htmlFor="targetValue" className="text-lg text-white">
           Target Value
         </label>
         <input
@@ -92,7 +92,7 @@ const BinarySearch = () => {
           array.map((value, index) => (
             <div
               key={index}
-              className={`w-16 h-16 flex flex-col items-center justify-center text-lg text-gray-700 rounded-lg shadow-md transition-all ${
+              className={`w-16 h-16 flex flex-col items-center justify-center text-lg text-white rounded-lg shadow-md transition-all ${
                 mid === index ? "bg-red-500" : ""
               } ${left <= index && index <= right ? "bg-blue-300" : ""}  ${
                 found === index ? "bg-green-500" : ""
@@ -110,19 +110,21 @@ const BinarySearch = () => {
       </div>
       <div className="text-center mt-4">
         {found !== -1 ? (
-          <p className="text-lg font-bold text-green-600">Target value found at index {found}</p>
+          <p className="text-lg font-bold text-green-600">
+            Target value found at index {found}
+          </p>
         ) : (
-          <p className="text-lg">Target value not found</p>
+          <p className="text-lg text-red-600">Target value not found</p>
         )}
       </div>
-      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
+      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-white">
         <p className="font-semibold">Best Time Complexity: O(1)</p>
         <p className="font-semibold">Average Time Complexity: O(log n)</p>
         <p className="font-semibold">Worst Time Complexity: O(log n)</p>
         <p className="font-semibold">Space Complexity: O(1)</p>
       </div>
       <_2dBinarySearch />
-    </>
+    </div>
   );
 };
 

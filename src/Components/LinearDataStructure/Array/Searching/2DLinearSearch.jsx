@@ -53,7 +53,7 @@ const MatrixLinearSearchVisualizer = () => {
   return (
     <>
       <div className="flex flex-col items-center gap-6 p-6 mt-28">
-        <h1 className="text-3xl font-bold">Matrix Linear Search</h1>
+        <h1 className="text-3xl font-bold text-white">Matrix Linear Search</h1>
         <textarea
           placeholder="Enter matrix (rows separated by newline, values by commas)"
           onChange={handleMatrixInput}
@@ -112,7 +112,7 @@ const MatrixLinearSearchVisualizer = () => {
           )}
         </div>
       </div>
-      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
+      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-white">
         <p className="font-semibold">Best Time Complexity: O(1)</p>
         <p className="font-semibold">Average Time Complexity: O(n * m)</p>
         <p className="font-semibold">Worst Time Complexity: O(n * m)</p>

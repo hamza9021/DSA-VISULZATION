@@ -96,7 +96,7 @@ const MatrixBinarySearchVisualizer = () => {
   return (
     <>
       <div className="flex flex-col items-center gap-6 p-6 mt-28">
-        <h1 className="text-3xl font-bold">Matrix Binary Search</h1>
+        <h1 className="text-3xl font-bold text-white">Matrix Binary Search</h1>
         <textarea
           placeholder="Enter matrix (rows separated by newline, values by commas) 
           NOTE: Each Row Is Sorted And Next Row 1st Element Is Greater Than Previous Row Last Element"
@@ -142,7 +142,7 @@ const MatrixBinarySearchVisualizer = () => {
                 >
                   <div className="flex flex-col items-center justify-center">
                     <span>{value}</span>
-                    <span className="text-xs text-gray-500">{`[${rowIndex}, ${colIndex}]`}</span>
+                    <span className="text-xs">{`[${rowIndex}, ${colIndex}]`}</span>
                   </div>
                 </div>
               ))}
@@ -160,7 +160,7 @@ const MatrixBinarySearchVisualizer = () => {
           )}
         </div>
       </div>
-      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
+      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-white">
         <p className="font-semibold">Best Time Complexity: O(1)</p>
         <p className="font-semibold">
           Average Time Complexity: O(log n * log m)

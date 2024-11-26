@@ -47,8 +47,8 @@ const BubbleSort = () => {
   };
 
   return (
-    <>
-      <h1 className="text-3xl font-bold text-center text-gray-800 my-6">
+    <div className="bg-gradient-to-b from-[#00224D] to-[#432E54] min-h-screen py-8 px-4">
+      <h1 className="text-3xl font-bold text-center text-white my-6">
         Bubble Sort Algorithm
       </h1>
 
@@ -58,10 +58,10 @@ const BubbleSort = () => {
             key={index}
             className={`text-white font-bold py-2 px-4 rounded m-2 transition-transform duration-500 ${
               swappedIndexes.includes(index)
-                ? "bg-yellow-500 scale-110"
+                ? "bg-yellow-500 scale-150"
                 : index >= sortedIndex
                 ? "bg-blue-500"
-                : "bg-red-500"
+                : "bg-[#FF204E]"
             }`}
           >
             {value}
@@ -86,7 +86,7 @@ const BubbleSort = () => {
         </button>
       </div>
 
-      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
+      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-white">
         <p className="font-semibold">Best Time Complexity: O(n)</p>
         <p className="font-semibold">
           Average Time Complexity: O(n<sup>2</sup>)
@@ -96,7 +96,7 @@ const BubbleSort = () => {
         </p>
         <p className="font-semibold">Space Complexity: O(1)</p>
       </div>
-    </>
+    </div>
   );
 };
 

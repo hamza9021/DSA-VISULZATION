@@ -69,14 +69,14 @@ const LinearSearch = () => {
   };
 
   return (
-    <>
+    <div className="bg-gradient-to-b from-[#00224D] to-[#432E54] min-h-screen py-8 px-4">
       <div className="flex flex-col items-center p-6">
-        <h1 className="text-3xl font-bold text-center text-gray-800 my-6">
+        <h1 className="text-3xl font-bold text-center text-white my-6">
           Linear Search Visualization
         </h1>
-        <div className="flex flex-col items-start space-y-4 bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+        <div className="flex flex-col items-start space-y-4 bg-[#00224D] p-6 rounded-lg shadow-md w-full max-w-md">
           <div className="flex items-center justify-between w-full">
-            <label htmlFor="size" className="text-gray-700 font-semibold w-1/3">
+            <label htmlFor="size" className="text-white font-semibold w-1/3">
               Size:
             </label>
             <input
@@ -89,7 +89,7 @@ const LinearSearch = () => {
           <div className="flex items-center justify-between w-full">
             <label
               htmlFor="value"
-              className="text-gray-700 font-semibold w-1/3"
+              className="text-white font-semibold w-1/3"
             >
               Insert Value:
             </label>
@@ -109,7 +109,7 @@ const LinearSearch = () => {
           <div className="flex items-center justify-between w-full">
             <label
               htmlFor="target"
-              className="text-gray-700 font-semibold w-1/3"
+              className="text-white font-semibold w-1/3"
             >
               Target Value:
             </label>
@@ -129,8 +129,8 @@ const LinearSearch = () => {
         </button>
 
         {array.length > 0 && (
-          <div className="mt-6 bg-white p-4 rounded-lg shadow-md w-full">
-            <h2 className="text-xl font-bold text-gray-700 mb-4">
+          <div className="mt-6 bg-[#00224D] p-4 rounded-lg shadow-md w-full">
+            <h2 className="text-xl font-bold text-white mb-4">
               Array Values
             </h2>
             <div className="grid grid-cols-10 gap-3">
@@ -150,7 +150,7 @@ const LinearSearch = () => {
             </div>
           </div>
         )}
-        <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
+        <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-white">
           <p className="font-semibold">Best Time Complexity: O(1)</p>
           <p className="font-semibold">Average Time Complexity: O(n)</p>
           <p className="font-semibold">Worst Time Complexity: O(n)</p>
@@ -158,7 +158,7 @@ const LinearSearch = () => {
         </div>
       </div>
       <MatrixLinearSearchVisualizer />
-    </>
+    </div>
   );
 };
 

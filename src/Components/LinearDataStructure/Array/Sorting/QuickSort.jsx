@@ -61,8 +61,8 @@ const QuickSort = () => {
   };
 
   return (
-    <>
-      <h1 className="text-3xl font-bold text-center text-gray-800 my-6">
+    <div className="bg-gradient-to-b from-[#00224D] to-[#432E54] min-h-screen py-8 px-4">
+      <h1 className="text-3xl font-bold text-center text-white my-6">
         Quick Sort Algorithm
       </h1>
 
@@ -72,10 +72,10 @@ const QuickSort = () => {
             key={index}
             className={`text-white font-bold py-2 px-4 rounded m-2 transition-transform duration-500 ${
               index === pivotIndex
-                ? "bg-purple-500 scale-125"
+                ? "bg-purple-500 scale-140"
                 : activeIndexes.includes(index)
-                ? "bg-yellow-500 scale-110"
-                : "bg-red-500"
+                ? "bg-yellow-500 scale-150"
+                : "bg-[#FF204E]"
             }`}
           >
             {value}
@@ -100,7 +100,7 @@ const QuickSort = () => {
         </button>
       </div>
 
-      <div className="flex flex-row items-center justify-center gap-4 my-6 text-sm text-gray-600">
+      <div className="flex flex-row items-center justify-center gap-4 my-6 text-sm text-white">
         <div className="flex items-center space-x-2">
           <div className="bg-purple-500 w-5 h-5 rounded"></div>
           <p>Pivot Element</p>
@@ -111,13 +111,13 @@ const QuickSort = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
+      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-white">
         <p className="font-semibold">Best Time Complexity: O(n log n)</p>
         <p className="font-semibold">Average Time Complexity: O(n log n)</p>
         <p className="font-semibold">Worst Time Complexity: O(n²)</p>
         <p className="font-semibold">Space Complexity: O(log n)</p>
       </div>
-    </>
+    </div>
   );
 };
 

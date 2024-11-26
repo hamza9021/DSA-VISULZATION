@@ -58,8 +58,8 @@ const SelectionSort = () => {
   };
 
   return (
-    <>
-      <h1 className="text-3xl font-bold text-center text-gray-800 my-6">
+    <div className="bg-gradient-to-b from-[#00224D] to-[#432E54] min-h-screen py-8 px-4">
+      <h1 className="text-3xl font-bold text-center text-white my-6">
         Visualized Selection Sort Algorithm
       </h1>
 
@@ -69,13 +69,13 @@ const SelectionSort = () => {
             key={index}
             className={`text-white font-bold py-2 px-4 rounded m-2 transition-transform duration-500 ${
               index === minIndex
-                ? "bg-blue-500 scale-110"
+                ? "bg-blue-500 scale-150"
                 : currentIndexes.includes(index)
-                ? "bg-yellow-500 scale-105"
-                : "bg-red-500"
+                ? "bg-yellow-500 scale-150"
+                : "bg-[#FF204E]"
             }`}
             style={{
-              transform: `translateY(${index === minIndex ? "-10px" : "0px"})`,
+              transform: `translateY(${index === minIndex ? "-20px" : "0px"})`,
             }}
           >
             {value}
@@ -99,7 +99,7 @@ const SelectionSort = () => {
           {isSorting ? "Sorting..." : "Start Sorting"}
         </button>
       </div>
-      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-gray-600">
+      <div className="flex flex-col items-center space-y-2 mt-4 text-sm text-white">
         <p className="font-semibold">
           Best Time Complexity: O(n<sup>2</sup>)
         </p>
@@ -111,7 +111,7 @@ const SelectionSort = () => {
         </p>
         <p className="font-semibold">Space Complexity: O(1)</p>
       </div>
-    </>
+    </div>
   );
 };
 
