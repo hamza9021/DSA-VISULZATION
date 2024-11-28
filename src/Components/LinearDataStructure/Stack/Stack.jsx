@@ -86,11 +86,11 @@ const Stack = () => {
   };
 
   return (
-    <>
-      <h1 className="text-3xl font-bold text-center text-gray-800 my-6">
+    <div className="bg-gradient-to-b from-[#00224D] to-[#432E54] min-h-screen py-8 px-4">
+      <h1 className="text-3xl font-bold text-center text-[#e5e5e7] my-6">
         Stack Visualization
       </h1>
-      <h3 className="font-semibold text-center text-gray-700 px-4 mb-6 max-w-lg mx-auto">
+      <h3 className="font-semibold text-center text-[#e5e5e7] px-4 mb-6 max-w-lg mx-auto">
         A stack is a linear data structure that follows the Last In, First Out
         (LIFO) principle, where elements are added and removed from the top of
         the stack.
@@ -100,7 +100,7 @@ const Stack = () => {
         <div className="flex flex-col items-center w-full sm:w-40">
           <label
             htmlFor="stackSize"
-            className="text-lg font-medium text-gray-700 mb-2"
+            className="text-lg font-medium text-[#e5e5e7] mb-2"
           >
             Set Stack Size:
           </label>
@@ -109,7 +109,7 @@ const Stack = () => {
             id="stackSize"
             value={stackSize}
             onChange={handleSizeChange}
-            className="border border-gray-300 px-4 py-2 rounded-lg w-full text-center focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-300 px-4 py-2 rounded-lg w-full text-center bg-white text-gray-800 focus:ring-2 focus:ring-[#FF204E]"
             min="1"
           />
         </div>
@@ -117,42 +117,42 @@ const Stack = () => {
         <div className="flex flex-col items-center w-full sm:w-40">
           <label
             htmlFor="pushValue"
-            className="text-lg font-medium text-gray-700 mb-2"
+            className="text-lg font-medium text-[#e5e5e7] mb-2"
           >
             Push Value:
           </label>
           <input
             type="number"
             id="pushValue"
-            className="border border-gray-300 px-4 py-2 rounded-lg w-full text-center focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-300 px-4 py-2 rounded-lg w-full text-center bg-white text-gray-800 focus:ring-2 focus:ring-[#FF204E]"
           />
           <button
             onClick={handlePush}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 w-full rounded-lg mt-2"
+            className="bg-[#FF204E] hover:bg-[#A0153E] text-[#e5e5e7] font-medium py-2 w-full rounded-lg mt-2 transition"
           >
             Push
           </button>
         </div>
 
         <div className="flex flex-col items-center w-full sm:w-40">
-          <label className="text-lg font-medium text-gray-700 mb-2">
+          <label className="text-lg font-medium text-[#e5e5e7] mb-2">
             Pop Value:
           </label>
           <button
             onClick={handlePop}
-            className="bg-red-500 hover:bg-red-700 text-white font-medium py-2 w-full rounded-lg"
+            className="bg-[#FF204E] hover:bg-[#A0153E] text-[#e5e5e7] font-medium py-2 w-full rounded-lg transition"
           >
             Pop
           </button>
         </div>
 
         <div className="flex flex-col items-center w-full sm:w-40">
-          <label className="text-lg font-medium text-gray-700 mb-2">
+          <label className="text-lg font-medium text-[#e5e5e7] mb-2">
             Peek Value:
           </label>
           <button
             onClick={handlePeek}
-            className="bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 w-full rounded-lg"
+            className="bg-[#FF204E] hover:bg-[#A0153E] text-[#e5e5e7] font-medium py-2 w-full rounded-lg transition"
           >
             Peek
           </button>
@@ -161,20 +161,21 @@ const Stack = () => {
 
       <div className="flex justify-center items-center mt-10">
         <div
-          className="relative bg-white rounded-xl shadow-2xl overflow-hidden flex justify-center items-end w-full max-w-md"
+          className="relative bg-[#00224D] rounded-xl shadow-2xl overflow-hidden flex justify-center items-end w-full max-w-md border border-[#e5e5e7]/20"
           style={{ height: `${stackSize * 60}px` }}
         >
-          <div className="absolute w-full h-full bg-gradient-to-t from-gray-200 to-transparent opacity-40"></div>
+          <div className="absolute w-full h-full bg-gradient-to-t from-[#432E54] to-transparent opacity-40"></div>
 
           {stackValues.map((value, index) => (
             <div
               key={index}
-              className="flex items-center justify-center bg-blue-500 text-white rounded-md font-semibold shadow-xl mb-2"
+              id={`stack-item-${index}`}
+              className="flex items-center justify-center bg-[#FF204E] text-[#e5e5e7] rounded-md font-semibold shadow-xl mb-2"
               style={{
                 position: "absolute",
                 bottom: `${index * 60}px`,
-                width: "90%", // Makes the stack item width responsive
-                height: "50px", // Responsive height
+                width: "90%",
+                height: "50px",
                 transition: "transform 0.3s ease-in-out",
               }}
             >
@@ -183,7 +184,7 @@ const Stack = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

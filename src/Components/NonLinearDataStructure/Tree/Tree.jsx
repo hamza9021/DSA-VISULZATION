@@ -8,15 +8,15 @@ const TreeNode = ({ value, x, y }) => (
       left: `${x}px`,
       width: "40px",
       height: "40px",
-      backgroundColor: "#007bff",
+      backgroundColor: "#FF204E",
       borderRadius: "50%",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      color: "#fff",
+      color: "#e5e5e7",
       fontWeight: "bold",
       fontSize: "16px",
-      border: "2px solid #fff",
+      border: "2px solid #e5e5e7",
       textAlign: "center",
       zIndex: 2,
       boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
@@ -47,7 +47,7 @@ const Arrow = ({ fromX, fromY, toX, toY }) => (
         refY="3.5"
         orient="auto"
       >
-        <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        <polygon points="0 0, 10 3.5, 0 7" fill="#e5e5e7" />
       </marker>
     </defs>
     <line
@@ -55,7 +55,7 @@ const Arrow = ({ fromX, fromY, toX, toY }) => (
       y1={fromY}
       x2={toX}
       y2={toY}
-      stroke="#333"
+      stroke="#e5e5e7"
       strokeWidth="2"
       markerEnd="url(#arrowhead)"
     />
@@ -150,53 +150,33 @@ const BSTVisualization = () => {
   const [treeRoot, setTreeRoot] = useState(null);
 
   return (
-    <>
-      <h1 className="text-3xl font-bold text-center text-gray-800 my-6">
+    <div className="bg-gradient-to-b from-[#00224D] to-[#432E54] min-h-screen py-8 px-4">
+      <h1 className="text-3xl font-bold text-center text-[#e5e5e7] my-6">
         Binary Search Tree Visualization
       </h1>
-      <h3 className="font-semibold text-center text-gray-700 px-4 mb-6 max-w-xl mx-auto">
+      <h3 className="font-semibold text-center text-[#e5e5e7] px-4 mb-6 max-w-xl mx-auto">
         A binary search tree (BST) is a data structure where each node has at
         most two children, and the left child is smaller than the parent node,
         while the right child is larger. It allows for efficient searching,
         insertion, and deletion of elements.
       </h3>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          minHeight: "100vh",
-          flexDirection: "column",
-        }}
-      >
-        <input
-          type="number"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          placeholder="Enter a value"
-          style={{
-            marginRight: "10px",
-            padding: "5px 10px",
-            fontSize: "16px",
-            border: "2px solid #ccc",
-            borderRadius: "5px",
-            marginBottom: "20px",
-          }}
-        />
-        <button
-          onClick={handleInsert}
-          style={{
-            padding: "8px 16px",
-            backgroundColor: "#28a745",
-            color: "#fff",
-            border: "none",
-            borderRadius: "5px",
-            fontSize: "16px",
-          }}
-        >
-          Insert
-        </button>
+      <div className="flex flex-col items-center justify-center min-h-[600px]">
+        <div className="flex gap-4 mb-8">
+          <input
+            type="number"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            placeholder="Enter a value"
+            className="px-4 py-2 text-base border border-gray-300 rounded-lg bg-white text-gray-800 focus:ring-2 focus:ring-[#FF204E]"
+          />
+          <button
+            onClick={handleInsert}
+            className="bg-[#FF204E] hover:bg-[#A0153E] text-[#e5e5e7] font-bold px-6 py-2 rounded-lg transition duration-300"
+          >
+            Insert
+          </button>
+        </div>
 
         <div
           style={{
@@ -223,28 +203,19 @@ const BSTVisualization = () => {
           ))}
         </div>
 
-        <div
-          style={{
-            marginTop: "30px",
-            textAlign: "center",
-            padding: "20px",
-            backgroundColor: "#f8f9fa",
-            borderRadius: "10px",
-            boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          <h3 style={{ color: "#007bff", fontWeight: "bold" }}>
+        <div className="mt-8 p-6 bg-[#00224D] rounded-xl shadow-xl border border-[#e5e5e7]/20">
+          <h3 className="text-[#e5e5e7] font-bold mb-2">
             Preorder Traversal: {preorder.join(" -> ")}
           </h3>
-          <h3 style={{ color: "#28a745", fontWeight: "bold" }}>
+          <h3 className="text-[#e5e5e7] font-bold mb-2">
             Inorder Traversal: {inorder.join(" -> ")}
           </h3>
-          <h3 style={{ color: "#dc3545", fontWeight: "bold" }}>
+          <h3 className="text-[#e5e5e7] font-bold">
             Postorder Traversal: {postorder.join(" -> ")}
           </h3>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
